@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #17181f;
+  color: #aaa;
+  padding: 64px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
+  border: 3px solid #30313d;
+  border-radius: 10px;
+  padding: 12px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+form input[type="text"] {
+  background: none;
+  border: 0;
+  padding: 5px 8px;
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  color: #fff;
+}
+
+form button {
+  background-color: #61dafb;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+form button:hover {
+  background-color: #b9ebf9;
+}
+
+.task {
+  background-color: #30313d;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s linear;
+}
+
+.task svg {
+  height: 20px;
+  margin-right: 8px;
+  fill: #61dafb;
+}
+
+.task-name {
+  flex-grow: 1;
+}
+
+.task p {
+  font-size: 24px;
+  position: relative;
+}
+
+.task p:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #ddd;
+  position: absolute;
+  top: 15px;
+  transition: width 0.1s linear;
+}
+
+.done p:before {
+  width: 95%;
+}
+
+.checkbox {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.done {
+  opacity: 0.3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main h1 {
+  margin-bottom: 16px;
+}
+
+.trash {
+  background: none;
+  border: none;
+}
+
+.trash svg {
+  fill: #aaa;
+  transition: all 0.3s;
+}
+
+.trash svg:hover {
+  cursor: pointer;
+  fill: #61dafb;
 }
